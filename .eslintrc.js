@@ -1,26 +1,34 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true
-  },
-  globals: {
-    __resources: true
-  },
-  parserOptions: {
-    sourceType: 'module',
-    parser: 'babel-eslint'
-  },
-  extends: [
-    '@nuxtjs'
-    
-  ],
-  // add your custom rules here
-  rules: {
-    // StandardJS — The Rules
-        "no-unused-expressions":"off",
+    root: true,
+    env: {
+        browser: true,
+        node: true
+    },
+    globals: {
+        __resources: true
+    },
+    parserOptions: {
+        sourceType: 'module',
+        parser: 'babel-eslint'
+    },
+    extends: [
+        '@nuxtjs'
+
+    ],
+    overrides: [{
+        files: ["*.vue","*.js"],
+        rules: {
+            'max-len': 'off' // disables line length check
+        }
+    }],
+    // add your custom rules here
+    rules: {
+        // StandardJS — The Rules
+        "no-tabs": 'off',
+        "vue/max-attributes-per-line": 'off',
+        "no-unused-expressions": "off",
         "indent": ["error", 2], // 2 spaces – for indentation
-        "max-len": ["error", { "code": 120}],
+        "max-len": ["error", { "code": 120 }],
         "no-console": "off",
         "arrow-parens": ["error", "as-needed"],
         "curly": ["error", "multi-line"],
@@ -35,6 +43,6 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
         "vue/max-attributes-per-line": "off",
-        "vue/singleline-html-element-content-newline" : 0
-  }
+        "vue/singleline-html-element-content-newline": 0
+    }
 }

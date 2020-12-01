@@ -30,6 +30,7 @@ export default {
   components: {
     SystemInformation
   },
+  middleware: 'auth',
   data () {
     return {
       externalContent: ''

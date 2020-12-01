@@ -26,7 +26,7 @@
     "@types/node": "12.12.6"
   },
   "devDependencies": {
-    "@mdi/font": "5.6.55",
+    "@mdi/font": "^5.8.55",
     "@nuxtjs/eslint-config": "1.1.2",
     "@nuxtjs/vuetify": "1.11.2",
     "@xpda-dev/core": "^0.1.5",
@@ -47,7 +47,7 @@
     "node-sass": "4.14.1",
     "nuxt": "2.14.5",
     "roboto-fontface": "0.10.0",
-    "sass-loader": "10.0.2",
+    "sass-loader": "7.3.1",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
     "validator": "^12.1.0",
     "vue-devtools": "5.1.4",
@@ -57,9 +57,16 @@
     "webpack-node-externals": "2.5.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.3",
     "dotenv": "^8.2.0",
-    "electron-firebase": "^1.0.0"
+    "electron-context-menu": "^2.3.0",
+    "electron-firebase": "^1.0.0",
+    "nuxt-webfontloader": "^1.1.0"
   }
 }

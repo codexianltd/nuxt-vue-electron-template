@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <v-app>
     <app-header />
-    <nuxt />
-  </div>
+    <v-main>
+      <nuxt />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -13,7 +15,5 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0 !important;
-}
+
 </style>

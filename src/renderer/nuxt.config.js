@@ -4,6 +4,7 @@
  * @link {https://nuxtjs.org/guide/configuration/}
  */
 require('../../config')
+
 console.log({ API_URL: process.env.API_URL })
 module.exports = {
   ssr: false, // or 'universal'
@@ -12,21 +13,23 @@ module.exports = {
     meta: [{ charset: 'utf-8' }]
   },
   loading: false,
-  plugins: [{ ssr: true, src: '@/plugins/icons.js' }],
-  buildModules: [],
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/vuetify'],
-  vuetify: {
-    theme: {
-      themes: {
-        light: {
-          primary: '#1867c0',
-          secondary: '#b0bec5',
-          accent: '#8c9eff',
-          error: '#b71c1c'
-        }
-      }
+
+  plugins: [{ ssr: true, src: '@/plugins/icons.js' }, '@/plugins/fontawesome'],
+
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
+  buildModules: ['@nuxtjs/vuetify'],
+
+  webfontloader: {
+    google: {
+      families: ['Roboto:400,500,700,900'] // Loads Lato font with weights 400 and 700
     }
   },
+  css: [{ src: '~/assets/variables.scss', lang: 'scss' }],
+
+  vuetify: {
+    optionsPath: './vuetify.options.js'
+  },
+
   axios: {
     baseURL: process.env.API_URL
   },
@@ -35,8 +38,8 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'login', method: 'post', propertyName: 'data.token' },
-          user: { url: 'me', method: 'get', propertyName: 'data' },
+          login: { url: 'login', method: 'post', propertyName: 'access_token' },
+          user: { url: 'me', method: 'get', propertyName: 'user' },
           logout: false
         }
       }
